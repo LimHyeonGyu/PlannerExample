@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>구글 맵 연습</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <script type="module" src="js/index.js"></script>
+</head>
+<body>
+    <div id="textbox_1">
+        <h1>구글 맵 API TEST</h1>
+        <ul>
+            <li>Maps JavaScript</li>
+        </ul>
+
+    </div>
+    <div id="content_1">
+        <div class="pac-card" id="pac-card">
+            <div>
+                <div id="title">장소 검색</div>
+                <div id="type-selector" class="pac-controls">
+                    <input
+                            type="radio"
+                            name="type"
+                            id="changetype-all"
+                            checked="checked"
+                    />
+                    <label for="changetype-all">전체</label>
+
+                    <input type="radio" name="type" id="changetype-establishment" />
+                    <label for="changetype-establishment">시설물</label>
+
+                    <input type="radio" name="type" id="changetype-address" />
+                    <label for="changetype-address">주소</label>
+
+                    <input type="radio" name="type" id="changetype-geocode" />
+                    <label for="changetype-geocode">좌표</label>
+
+                    <input type="radio" name="type" id="changetype-cities" />
+                    <label for="changetype-cities">도시</label>
+
+                    <input type="radio" name="type" id="changetype-regions" />
+                    <label for="changetype-regions">지역</label>
+                </div>
+                <br />
+                <div id="strict-bounds-selector" class="pac-controls">
+                    <input type="checkbox" id="use-location-bias" value="" checked />
+                    <label for="use-location-bias">Bias to map viewport</label>
+
+                    <input type="checkbox" id="use-strict-bounds" value="" />
+                    <label for="use-strict-bounds">Strict bounds</label>
+                </div>
+            </div>
+            <div id="pac-container">
+                <input id="pac-input" type="text" placeholder="Enter a location" />
+            </div>
+        </div>
+        <div id="map"></div>
+        <div id="infowindow-content">
+
+            <span id="place-name" class="title"></span><br />
+            <span id="place-address"></span>
+        </div>
+    </div>
+    <script
+            th:src="'https://maps.googleapis.com/maps/api/' + ${apikey}" defer>
+    </script>
+</body>
+</html>
